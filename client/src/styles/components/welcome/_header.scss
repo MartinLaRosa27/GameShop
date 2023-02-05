@@ -1,0 +1,28 @@
+#welcome-header {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 225px;
+  color: #ffffff;
+  background-color: #fff159;
+  width: 100%;
+
+  h6 {
+    text-transform: uppercase;
+    .logo {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #welcome-header {
+    h6 {
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}

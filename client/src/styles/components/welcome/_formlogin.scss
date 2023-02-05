@@ -1,0 +1,27 @@
+#welcome-formlogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-floating {
+    width: 600px;
+
+    input:focus {
+      box-shadow: none;
+      border-color: #fff159;
+    }
+  }
+
+  button {
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  #welcome-formlogin {
+    .form-floating {
+      width: 300px;
+    }
+  }
+}

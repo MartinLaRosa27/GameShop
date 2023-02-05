@@ -1,0 +1,102 @@
+#welcome {
+  height: 100vh;
+}
+
+#welcome-header {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 225px;
+  color: #ffffff;
+  background-color: #fff159;
+  width: 100%;
+}
+#welcome-header h6 {
+  text-transform: uppercase;
+}
+#welcome-header h6 .logo {
+  width: 150px;
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  #welcome-header h6 .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+#welcome-enter {
+  padding-top: 140px;
+}
+#welcome-enter .enter-main {
+  background-color: #ffffff;
+  border: 1px solid #05336c;
+  border-radius: 5px;
+}
+#welcome-enter .enter-main h3 {
+  font-weight: 100;
+}
+#welcome-enter .enter-main h6 {
+  font-weight: 100;
+}
+#welcome-enter .enter-main h6 strong {
+  color: #05336c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #welcome-enter {
+    padding-top: 100px;
+  }
+}
+#welcome-tutorial {
+  padding-bottom: 50px;
+  background: #f9f9fa;
+  text-align: center;
+}
+#welcome-tutorial h3 {
+  padding-bottom: 0 !important;
+  font-weight: 100;
+}
+#welcome-tutorial p {
+  color: #05336c;
+}
+#welcome-tutorial iframe {
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  #welcome-tutorial iframe {
+    width: 300px;
+    height: 250px;
+  }
+}
+#welcome-formlogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#welcome-formlogin .form-floating {
+  width: 600px;
+}
+#welcome-formlogin .form-floating input:focus {
+  box-shadow: none;
+  border-color: #fff159;
+}
+#welcome-formlogin button {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #welcome-formlogin .form-floating {
+    width: 300px;
+  }
+}
+body footer {
+  margin-top: 50px;
+  padding: 50px;
+  background-color: #fff159;
+  text-align: center;
+}/*# sourceMappingURL=app.css.map */
