@@ -94,9 +94,139 @@
     width: 300px;
   }
 }
-body footer {
+#home-banner {
+  display: flex;
+  height: 400px;
+  background-color: #e3e3e3;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+}
+#home-banner .banner-text {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#home-banner .banner-text h6 {
+  color: grey;
+}
+#home-banner .banner-text button {
+  text-transform: uppercase;
+  background-color: #fff159;
+  border-color: black;
+  padding: 30px;
+}
+#home-banner .banner-text button:hover {
+  background-color: black;
+  border-color: #e3e3e3;
+  color: #e3e3e3;
+  transition: 0.4s;
+}
+#home-banner .banner-img img {
+  float: right;
+}
+
+#home-header .logo {
+  width: 90px;
+  height: 90px;
+}
+#home-header .search {
+  display: flex;
+  align-items: center;
+}
+#home-header .search form {
+  display: flex;
+  flex-direction: row;
+}
+#home-header .search form input {
+  width: 400px;
+  border-color: #e3e3e3;
+  border-radius: 0;
+}
+#home-header .search form input:focus {
+  border-color: #e3e3e3;
+  box-shadow: 1px 1px 25px #fff159;
+}
+#home-header .search form button {
+  color: black;
+  background-color: #fff159;
+  border-color: #e3e3e3;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+}
+#home-header .search form button span {
+  font-size: 1.4rem;
+}
+#home-header .search form button:hover {
+  background-color: black;
+  color: #e3e3e3;
+  transition: 0.4s;
+}
+#home-header .icons {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+#home-header .icons .icon {
+  margin-right: 20px;
+}
+#home-header .icons .icon:last-of-type {
+  margin-right: 0;
+}
+#home-header .icons .icon:hover {
+  transition: 0.4s;
+  cursor: pointer;
+  color: #fff159;
+}
+#home-header .icons .badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 9px;
+}
+#home-header .icons #lblCartCount {
+  font-size: 12px;
+  background: #fff159;
+  color: black;
+  padding: 5px;
+  vertical-align: top;
+  margin-left: -10px;
+}
+
+#home-navbar {
+  background-color: #fff159;
+}
+#home-navbar ul li {
+  margin-right: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#home-navbar ul li:last-of-type {
+  margin-right: 0;
+}
+#home-navbar .info {
+  font-weight: 200;
+}
+#home-navbar .info span {
+  font-size: 1.5rem;
+}
+
+footer {
   margin-top: 50px;
   padding: 50px;
   background-color: #fff159;
   text-align: center;
+}
+
+#not_found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#not_found h1 {
+  font-size: 5rem;
+  color: #fff159;
+}
+#not_found h3 {
+  font-size: 3rem;
+  color: grey;
 }/*# sourceMappingURL=app.css.map */

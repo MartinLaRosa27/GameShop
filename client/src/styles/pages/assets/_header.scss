@@ -1,0 +1,83 @@
+#home-header {
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      input {
+        width: 400px;
+        border-color: #e3e3e3;
+        border-radius: 0;
+
+        &:focus {
+          border-color: #e3e3e3;
+          box-shadow: 1px 1px 25px #fff159;
+        }
+      }
+
+      button {
+        color: black;
+        background-color: #fff159;
+        border-color: #e3e3e3;
+        border-radius: 0;
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+
+        span {
+          font-size: 1.4rem;
+        }
+
+        &:hover {
+          background-color: black;
+          color: #e3e3e3;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+
+    .icon {
+      margin-right: 20px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        transition: 0.4s;
+        cursor: pointer;
+        color: #fff159;
+      }
+    }
+
+    .badge {
+      padding-left: 9px;
+      padding-right: 9px;
+      -webkit-border-radius: 9px;
+      -moz-border-radius: 9px;
+      border-radius: 9px;
+    }
+
+    #lblCartCount {
+      font-size: 12px;
+      background: #fff159;
+      color: black;
+      padding: 5px;
+      vertical-align: top;
+      margin-left: -10px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+#home-banner {
+  display: flex;
+  height: 400px;
+  background-color: #e3e3e3;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+
+  .banner-text {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+
+    h6 {
+      color: grey;
+    }
+
+    button {
+      text-transform: uppercase;
+      background-color: #fff159;
+      border-color: black;
+      padding: 30px;
+    }
+
+    button:hover {
+      background-color: black;
+      border-color: #e3e3e3;
+      color: #e3e3e3;
+      transition: 0.4s;
+    }
+  }
+
+  .banner-img {
+    img {
+      float: right;
+    }
+  }
+}

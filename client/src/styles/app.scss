@@ -1,11 +1,4 @@
-@import "./components/welcome/index";
-@import "./components/home/index";
-
-body {
-  footer {
-    margin-top: 50px;
-    padding: 50px;
-    background-color: #fff159;
-    text-align: center;
-  }
-}
+@import "./pages/welcome/index";
+@import "./pages/home/index";
+@import "./pages/assets/index";
+@import "./pages/404";

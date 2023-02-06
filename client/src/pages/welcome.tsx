@@ -1,4 +1,4 @@
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/assets/Footer";
 import { Enter } from "@/components/welcome/Enter";
 import { Header } from "@/components/welcome/Header";
 import auth from "../middleware/auth";
