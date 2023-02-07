@@ -1,0 +1,68 @@
+#footer-details {
+  background-color: #e3e3e3;
+  color: grey;
+
+  .information {
+    .contact {
+      list-style: none;
+
+      li {
+        margin-top: 5px;
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .payment {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      li {
+        margin-right: 30px;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .signup {
+    h6 {
+      color: black;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      input {
+        width: 250px;
+        border-color: #e3e3e3;
+        border-radius: 0;
+
+        &:focus {
+          border-color: #e3e3e3;
+          box-shadow: none;
+        }
+      }
+
+      button {
+        color: black;
+        background-color: #fff159;
+        border-color: #e3e3e3;
+        border-radius: 0;
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+
+        span {
+          font-size: 1.4rem;
+        }
+
+        &:hover {
+          background-color: black;
+          color: #e3e3e3;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}

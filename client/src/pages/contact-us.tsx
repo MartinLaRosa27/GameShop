@@ -1,20 +1,20 @@
-import { Footer } from "@/components/assets/footer/Footer";
-import { Enter } from "@/components/welcome/Enter";
-import { Header } from "@/components/welcome/Header";
+import Head from "next/head";
 import auth from "../middleware/auth";
 import * as cookie from "cookie";
-import Head from "next/head";
+import { Footer } from "@/components/assets/footer/Footer";
+import { Header } from "@/components/assets/header/Header";
+import { FormContact } from "@/components/contact-us/FormContact";
 
-export default function Welcome() {
+export default function ContactUs() {
   return (
-    <div id="welcome">
+    <>
       <Head>
-        <title>Welcome to GameShop!</title>
+        <title>Contact Us | GameShop</title>
       </Head>
       <Header />
-      <Enter />
+      <FormContact />
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -26,10 +26,10 @@ export const getServerSideProps = async (context: any) => {
     const parsedCookies = cookie.parse(context.req.headers.cookie);
     token = parsedCookies.token;
   }
-  if (await auth(token)) {
+  if (!(await auth(token))) {
     return {
       redirect: {
-        destination: "/",
+        destination: "/welcome",
         permanent: false,
       },
     };

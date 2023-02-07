@@ -138,7 +138,7 @@
 }
 #home-offers img:hover {
   cursor: pointer;
-  border-width: 10px;
+  border-width: 5px;
 }
 
 #home-newArrivals {
@@ -316,10 +316,143 @@
 }
 
 footer {
-  margin-top: 50px;
   padding: 50px;
   background-color: #fff159;
   text-align: center;
+}
+
+#footer-details {
+  background-color: #e3e3e3;
+  color: grey;
+}
+#footer-details .information .contact {
+  list-style: none;
+}
+#footer-details .information .contact li {
+  margin-top: 5px;
+}
+#footer-details .information .contact li span {
+  font-size: 1.2rem;
+}
+#footer-details .information .payment {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+#footer-details .information .payment li {
+  margin-right: 30px;
+  font-size: 2.5rem;
+}
+#footer-details .signup h6 {
+  color: black;
+}
+#footer-details .signup form {
+  display: flex;
+  flex-direction: row;
+}
+#footer-details .signup form input {
+  width: 250px;
+  border-color: #e3e3e3;
+  border-radius: 0;
+}
+#footer-details .signup form input:focus {
+  border-color: #e3e3e3;
+  box-shadow: none;
+}
+#footer-details .signup form button {
+  color: black;
+  background-color: #fff159;
+  border-color: #e3e3e3;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+}
+#footer-details .signup form button span {
+  font-size: 1.4rem;
+}
+#footer-details .signup form button:hover {
+  background-color: black;
+  color: #e3e3e3;
+  transition: 0.4s;
+}
+
+#header-cart .no-products span {
+  font-size: 5rem;
+  color: #d90707;
+}
+#header-cart .no-products h5 {
+  color: #d90707;
+  text-transform: uppercase;
+}
+#header-cart .with-products {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#header-cart .with-products .price {
+  font-weight: bold;
+}
+#header-cart .with-products .badge {
+  cursor: pointer;
+}
+#header-cart .with-products .btn {
+  width: 100%;
+}
+
+#aboutus-information .col p {
+  color: grey;
+}
+#aboutus-information .img {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+}
+#aboutus-information .img img {
+  width: 500px;
+  height: 450px;
+  border-radius: 5px;
+}
+
+#contactUs-formContact .fullName {
+  display: flex;
+  flex-direction: row;
+}
+#contactUs-formContact .fullName .form-floating {
+  margin-right: 50px;
+}
+#contactUs-formContact .fullName .form-floating:last-of-type {
+  margin-right: 0;
+}
+#contactUs-formContact input {
+  width: 400px;
+}
+#contactUs-formContact input:focus {
+  box-shadow: none;
+  border: 2px solid grey;
+}
+#contactUs-formContact textarea {
+  resize: none;
+  height: 120px;
+}
+#contactUs-formContact textarea:focus {
+  box-shadow: none;
+  border: 2px solid grey;
+}
+#contactUs-formContact button {
+  color: black;
+  background-color: #fff159;
+  border-color: #e3e3e3;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#contactUs-formContact button span {
+  font-size: 1.4rem;
+}
+#contactUs-formContact button:hover {
+  background-color: black;
+  color: #e3e3e3;
+  transition: 0.4s;
 }
 
 #not_found {

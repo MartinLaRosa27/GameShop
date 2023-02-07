@@ -42,7 +42,7 @@ export const NewArrivals = () => {
           <div className="row">
             {newArrivals.map((newArrival) => {
               return (
-                <div className="col-md-6 col-lg-4 col-xl-3">
+                <div className="col-md-6 col-lg-4 col-xl-3" key={newArrival._id}>
                   <div id="product-1" className="single-product">
                     <div
                       className="part-1"

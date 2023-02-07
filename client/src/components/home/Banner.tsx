@@ -17,7 +17,7 @@ export const Banner = () => {
       },
       name: "The new generation of video games",
       descrption:
-        "Buy the new PlayStation, and start playing your favorite games",
+        "Buy the new PlayStation, and start playing your favorite games.",
     },
     {
       _id: 2,
@@ -28,7 +28,7 @@ export const Banner = () => {
         width: "400px",
       },
       name: "BGH P615",
-      descrption: "Experience amazing 4K Ultra HD HDR picture quality",
+      descrption: "Experience amazing 4K Ultra HD HDR picture quality.",
     },
   ];
 

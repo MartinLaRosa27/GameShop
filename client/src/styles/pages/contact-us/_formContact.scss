@@ -1,0 +1,53 @@
+#contactUs-formContact {
+  .fullName {
+    display: flex;
+    flex-direction: row;
+
+    .form-floating {
+      margin-right: 50px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  input {
+    width: 400px;
+
+    &:focus {
+      box-shadow: none;
+      border: 2px solid grey;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 120px;
+    &:focus {
+      box-shadow: none;
+      border: 2px solid grey;
+    }
+  }
+
+  button {
+    color: black;
+    background-color: #fff159;
+    border-color: #e3e3e3;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    span {
+      font-size: 1.4rem;
+    }
+
+    &:hover {
+      background-color: black;
+      color: #e3e3e3;
+      transition: 0.4s;
+    }
+  }
+}

@@ -1,9 +1,8 @@
 import Head from "next/head";
 import auth from "../middleware/auth";
 import * as cookie from "cookie";
-import { Header } from "@/components/assets/Header";
-import { Navbar } from "@/components/assets/Navbar";
-import { Footer } from "@/components/assets/Footer";
+import { Header } from "@/components/assets/header/Header";
+import { Footer } from "@/components/assets/footer/Footer";
 import { Banner } from "@/components/home/Banner";
 import { Offers } from "@/components/home/Offers";
 import { NewArrivals } from "@/components/home/NewArrivals";
@@ -15,7 +14,6 @@ export default function Home(props: { token: string }) {
         <title>GameShop</title>
       </Head>
       <Header />
-      <Navbar />
       <Banner/>
       <NewArrivals/>
       <Offers/>

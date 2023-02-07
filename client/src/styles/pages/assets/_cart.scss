@@ -1,0 +1,28 @@
+#header-cart {
+  .no-products {
+    span {
+      font-size: 5rem;
+      color: #d90707;
+    }
+
+    h5 {
+      color: #d90707;
+      text-transform: uppercase;
+    }
+  }
+
+  .with-products {
+    font-family: Arial, Helvetica, sans-serif;
+
+    .price {
+      font-weight: bold;
+    }
+    .badge {
+      cursor: pointer;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

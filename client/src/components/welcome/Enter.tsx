@@ -8,7 +8,7 @@ export const Enter = () => {
 
   return (
     <>
-      <div id="welcome-enter" className="container">
+      <div id="welcome-enter" className="container mb-5">
         <div className="enter-main">
           <h3 className="p-5">
             Start using <strong>GameShop</strong> on your computer:

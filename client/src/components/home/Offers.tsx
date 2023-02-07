@@ -9,7 +9,7 @@ export const Offers = () => {
   };
 
   return (
-    <div id="home-offers">
+    <div id="home-offers" className="mb-5">
       <Image src={offers.img} alt={offers.title} title={offers.title} />
     </div>
   );

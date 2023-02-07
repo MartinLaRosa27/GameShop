@@ -1,0 +1,19 @@
+#aboutus-information {
+  .col {
+    p {
+      color: grey;
+    }
+  }
+
+  .img {
+    display: flex;
+    flex-direction: column;
+    color: grey;
+
+    img {
+      width: 500px;
+      height: 450px;
+      border-radius: 5px;
+    }
+  }
+}
