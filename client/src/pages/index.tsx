@@ -6,7 +6,7 @@ import { Navbar } from "@/components/assets/Navbar";
 import { Footer } from "@/components/assets/Footer";
 import { Banner } from "@/components/home/Banner";
 import { Offers } from "@/components/home/Offers";
-import { Products } from "@/components/home/Products";
+import { NewArrivals } from "@/components/home/NewArrivals";
 
 export default function Home(props: { token: string }) {
   return (
@@ -17,7 +17,7 @@ export default function Home(props: { token: string }) {
       <Header />
       <Navbar />
       <Banner/>
-      <Products/>
+      <NewArrivals/>
       <Offers/>
       <Footer/>
     </>
