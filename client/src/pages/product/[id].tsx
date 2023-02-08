@@ -1,22 +1,28 @@
 import Head from "next/head";
-import auth from "../middleware/auth";
+import auth from "../../middleware/auth";
 import * as cookie from "cookie";
 import { Header } from "@/components/assets/header/Header";
 import { Footer } from "@/components/assets/footer/Footer";
-import { Banner } from "@/components/home/Banner";
-import { Offers } from "@/components/home/Offers";
-import { NewArrivals } from "@/components/home/NewArrivals";
+import { Description } from "@/components/product/Description";
 
-export default function Home(props: { token: any }) {
+export default function ProductId(props: { token: any }) {
+  const product = {
+    _id: 1,
+    img: ["https://i.ibb.co/L8Nrb7p/1.jpg", "https://i.ibb.co/cLnZjnS/2.jpg"],
+    name: "Nike #1",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 300.5453,
+    stock: 15,
+  };
+
   return (
     <>
       <Head>
-        <title>GameShop</title>
+        <title>{product.name} | GameShop</title>
       </Head>
       <Header token={props.token} />
-      <Banner />
-      <NewArrivals />
-      <Offers />
+      <Description token={props.token} product={product} />
       <Footer />
     </>
   );

@@ -5,15 +5,21 @@ import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
   AiOutlineLogout,
+  AiOutlineLogin,
 } from "react-icons/ai";
-
 import { useUserContext } from "../../../context/UserContext";
 import { Navbar } from "./Navbar";
 import { Cart } from "./Cart";
+import { useRouter } from "next/router";
 
-export const Header = () => {
+export const Header = (props: { token: any }) => {
+  const router = useRouter();
   const { logout } = useUserContext();
   const [modalShow, setModalShow] = useState(false);
+
+  const handleClickLogin = () => {
+    router.push("/welcome");
+  };
 
   return (
     <div>
@@ -43,9 +49,15 @@ export const Header = () => {
                 5{" "}
               </span>
             </span>
-            <span className="icon" onClick={() => logout()}>
-              <AiOutlineLogout />
-            </span>
+            {props.token ? (
+              <span className="icon" onClick={() => logout()}>
+                <AiOutlineLogout />
+              </span>
+            ) : (
+              <span className="icon" onClick={() => handleClickLogin()}>
+                <AiOutlineLogin />
+              </span>
+            )}
           </div>
         </div>
       </header>

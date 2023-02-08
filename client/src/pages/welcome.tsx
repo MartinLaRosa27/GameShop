@@ -21,7 +21,7 @@ export default function Welcome() {
 export const getServerSideProps = async (context: any) => {
   let token;
   if (typeof context.req.headers.cookie !== "string") {
-    token = "Invalid token";
+    token = null;
   } else {
     const parsedCookies = cookie.parse(context.req.headers.cookie);
     token = parsedCookies.token;

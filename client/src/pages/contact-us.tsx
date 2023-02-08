@@ -5,13 +5,13 @@ import { Footer } from "@/components/assets/footer/Footer";
 import { Header } from "@/components/assets/header/Header";
 import { FormContact } from "@/components/contact-us/FormContact";
 
-export default function ContactUs() {
+export default function ContactUs(props: { token: any }) {
   return (
     <>
       <Head>
         <title>Contact Us | GameShop</title>
       </Head>
-      <Header />
+      <Header token={props.token} />
       <FormContact />
       <Footer />
     </>
@@ -21,18 +21,13 @@ export default function ContactUs() {
 export const getServerSideProps = async (context: any) => {
   let token;
   if (typeof context.req.headers.cookie !== "string") {
-    token = "Invalid token";
+    token = null;
   } else {
     const parsedCookies = cookie.parse(context.req.headers.cookie);
     token = parsedCookies.token;
   }
   if (!(await auth(token))) {
-    return {
-      redirect: {
-        destination: "/welcome",
-        permanent: false,
-      },
-    };
+    token = null;
   }
   return {
     props: {

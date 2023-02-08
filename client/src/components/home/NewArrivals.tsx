@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export const NewArrivals = () => {
   const newArrivals = [
@@ -6,7 +7,7 @@ export const NewArrivals = () => {
       _id: 1,
       img: "https://i.ibb.co/L8Nrb7p/1.jpg",
       name: "Nike #1",
-      price: 300.5,
+      price: 300.55656,
     },
     {
       _id: 2,
@@ -42,7 +43,11 @@ export const NewArrivals = () => {
           <div className="row">
             {newArrivals.map((newArrival) => {
               return (
-                <div className="col-md-6 col-lg-4 col-xl-3" key={newArrival._id}>
+                <Link
+                  className="col-md-6 col-lg-4 col-xl-3"
+                  key={newArrival._id}
+                  href={`/product/${newArrival._id}`}
+                >
                   <div id="product-1" className="single-product">
                     <div
                       className="part-1"
@@ -50,23 +55,15 @@ export const NewArrivals = () => {
                         background: `url(${newArrival.img}) no-repeat center`,
                         backgroundSize: "cover",
                       }}
-                    >
-                      {/* <ul>
-                        <li>
-                          <a href="#">
-                            <i className="fas fa-expand">
-                              <img src={newArrival.img} alt={newArrival.name} />
-                            </i>
-                          </a>
-                        </li>
-                      </ul> */}
-                    </div>
+                    ></div>
                     <div className="part-2">
                       <h3 className="product-title">{newArrival.name}</h3>
-                      <h4 className="product-price">${newArrival.price}</h4>
+                      <h4 className="product-price">
+                        ${newArrival.price.toFixed(2)}
+                      </h4>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
