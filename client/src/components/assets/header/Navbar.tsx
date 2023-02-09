@@ -13,11 +13,15 @@ export const Navbar = () => {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <NavDropdown title="Shop by Categories" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Category 1</NavDropdown.Item>
+              <NavDropdown.Item href="/products/xbox">Xbox</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Category 2</NavDropdown.Item>
+              <NavDropdown.Item href="/products/playstation">
+                PlayStation
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Category 3</NavDropdown.Item>
+              <NavDropdown.Item href="/products/home">
+                Products for home
+              </NavDropdown.Item>
             </NavDropdown>
           </li>
 

@@ -1,3 +1,11 @@
+.loadPage {
+  color: #fff159;
+  padding: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @import "./pages/welcome/index";
 @import "./pages/home/index";
 @import "./pages/assets/index";

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "PlayStaion 5",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675882955/gameshop/pt6lrjaazrvxe2spvjgr.webp",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675882955/gameshop/yzwxgxkyuwcbkhkmn9jw.webp"
+    ],
+    "price": 349.99,
+    "stock": 2,
+    "releaseDate": "2020-11-12",
+    "createdAt": "2021-01-08",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5336"
+    }
+  },
+  {
+    "name": "FIFA 23 PS4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884206/gameshop/yk9g7bxt5iiyaurdisko.png",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884206/gameshop/is5wf4inyq4w1ywpjzg2.png",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884204/gameshop/f1rqs6ob9ob5j20ixwxr.webp"
+    ],
+    "price": 49.99,
+    "stock": 12,
+    "releaseDate": "2022-11-31",
+    "createdAt": "2022-10-03",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5336"
+    }
+  },
+  {
+    "name": "Spider-Man II PS5",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884204/gameshop/ulugzoggqjhpwfmpzcti.jpg",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884203/gameshop/obf11ygzuytfn14zxj8p.webp",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884204/gameshop/gi0or9hwsyxp3zbbe4es.jpg"
+    ],
+    "price": 69.99,
+    "releaseDate": "2023-01-31",
+    "stock": 4,
+    "createdAt": "2022-05-08",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5336"
+    }
+  },
+
+  {
+    "name": "Xbox Series X",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884472/gameshop/mkufvtyw781drmyfjccw.webp",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884465/gameshop/fea2wy6t7rwqirpawkdh.png"
+    ],
+    "price": 299.99,
+    "releaseDate": "2020-09-10",
+    "stock": 0,
+    "createdAt": "2021-06-18",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5337"
+    }
+  },
+  {
+    "name": "FIFA 23 Xbox Series X",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884622/gameshop/vlckqbjtirnzncyfglrt.jpg",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884206/gameshop/is5wf4inyq4w1ywpjzg2.png",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884204/gameshop/f1rqs6ob9ob5j20ixwxr.webp"
+    ],
+    "price": 39.99,
+    "releaseDate": "2022-11-31",
+    "stock": 20,
+    "createdAt": "2022-09-28",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5337"
+    }
+  },
+  {
+    "name": "WWE 2K23 Xbox Series X",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884622/gameshop/himmldjeo8sa52dxlm90.jpg",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884622/gameshop/eao5rbzkhaxdkskiihf2.jpg",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884622/gameshop/zx3sjoz9r1wt83nulh73.jpg"
+    ],
+    "price": 79.99,
+    "releaseDate": "2023-03-14",
+    "stock": 100,
+    "createdAt": "2023-01-28",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5337"
+    }
+  },
+  {
+    "name": "50\" UHD 4K Smart TV AU7000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "img": [
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884933/gameshop/x1gikvrxdwy48j8glfud.avif",
+      "https://res.cloudinary.com/dtargbsvk/image/upload/v1675884933/gameshop/rg8wxbse2lepefmru8b4.avif"
+    ],
+    "price": 199.99,
+    "releaseDate": "2021-03-14",
+    "stock": 0,
+    "createdAt": "2019-02-08",
+    "categoryId": {
+      "$oid": "63e3f39a0952be63c97d5338"
+    }
+  }
+]

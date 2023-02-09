@@ -1,48 +1,63 @@
+import React from "react";
 import Head from "next/head";
 import auth from "../../middleware/auth";
 import * as cookie from "cookie";
+import { useCategoryContext } from "@/context/CategoryContext";
+import { useProductContext } from "@/context/ProductContext";
 import { Header } from "@/components/assets/header/Header";
 import { Footer } from "@/components/assets/footer/Footer";
 import { Items } from "@/components/products/Items";
 
 export default function ProductsCategory(props: {
   token: any;
-  category: string;
+  categoryTitle: string;
 }) {
-  const products = [
-    {
-      _id: 1,
-      img: "https://i.ibb.co/L8Nrb7p/1.jpg",
-      name: "Nike #1",
-      price: 300.55656,
-    },
-    {
-      _id: 2,
-      img: "https://i.ibb.co/L8Nrb7p/1.jpg",
-      name: "Nike #2",
-      price: 300.5,
-    },
-    {
-      _id: 3,
-      img: "https://i.ibb.co/L8Nrb7p/1.jpg",
-      name: "Nike #3",
-      price: 300.5,
-    },
-    {
-      _id: 4,
-      img: "https://i.ibb.co/L8Nrb7p/1.jpg",
-      name: "Nike #4",
-      price: 300.5,
-    },
-  ];
+  const [products, setProducts] = React.useState<any>(null);
+  const [category, setCategory] = React.useState<any>(null);
+  const { getByCategory } = useProductContext();
+  const { getCategoryByTitle } = useCategoryContext();
+
+  React.useEffect(() => {
+    const callgGetCategoryByTitle = async () => {
+      const cat = await getCategoryByTitle(props.categoryTitle);
+      if (cat) {
+        setCategory(cat);
+        setProducts(await getByCategory(cat._id, "desc", null));
+      }
+    };
+    callgGetCategoryByTitle();
+  }, []);
 
   return (
     <>
-      <Head>
-        <title>{props.category} | GameShop</title>
-      </Head>
       <Header token={props.token} />
-      <Items products={products} category={props.category} />
+
+      {category && products && (
+        <>
+          <Head>
+            <title>{category.title} | GameShop</title>
+          </Head>
+          <Items
+            products={products}
+            category={category.title}
+            categoryId={category._id}
+            setProducts={setProducts}
+          />
+        </>
+      )}
+      {!category ||
+        (!products && (
+          <>
+            <div className="text-center loadPage">
+              <div
+                className="spinner-grow "
+                style={{ width: "3rem", height: "3rem" }}
+              >
+                <span className="visually-hidden ">Loading...</span>
+              </div>
+            </div>
+          </>
+        ))}
       <Footer />
     </>
   );
@@ -61,7 +76,7 @@ export const getServerSideProps = async (context: any) => {
   }
   return {
     props: {
-      category: context.params.category,
+      categoryTitle: context.params.category,
       token,
     },
   };

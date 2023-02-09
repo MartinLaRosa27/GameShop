@@ -1,28 +1,46 @@
+import React from "react";
 import Head from "next/head";
 import auth from "../../middleware/auth";
 import * as cookie from "cookie";
+import { useProductContext } from "@/context/ProductContext";
 import { Header } from "@/components/assets/header/Header";
 import { Footer } from "@/components/assets/footer/Footer";
 import { Description } from "@/components/product/Description";
 
-export default function ProductId(props: { token: any }) {
-  const product = {
-    _id: 1,
-    img: ["https://i.ibb.co/L8Nrb7p/1.jpg", "https://i.ibb.co/cLnZjnS/2.jpg"],
-    name: "Nike #1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    price: 300.5453,
-    stock: 15,
-  };
+export default function ProductId(props: { token: any; productId: string }) {
+  const [product, setProduct] = React.useState<any>(null);
+  const { getByIdId } = useProductContext();
+
+  React.useEffect(() => {
+    const callSetProduct = async () => {
+      setProduct(await getByIdId(props.productId));
+    };
+    callSetProduct();
+  }, []);
 
   return (
     <>
-      <Head>
-        <title>{product.name} | GameShop</title>
-      </Head>
       <Header token={props.token} />
-      <Description token={props.token} product={product} />
+      {product && (
+        <>
+          <Head>
+            <title>{product.name} | GameShop</title>
+          </Head>
+          <Description token={props.token} product={product} />
+        </>
+      )}
+      {!product && (
+        <>
+          <div className="text-center loadPage">
+            <div
+              className="spinner-grow "
+              style={{ width: "3rem", height: "3rem" }}
+            >
+              <span className="visually-hidden ">Loading...</span>
+            </div>
+          </div>
+        </>
+      )}
       <Footer />
     </>
   );
@@ -41,6 +59,7 @@ export const getServerSideProps = async (context: any) => {
   }
   return {
     props: {
+      productId: context.params.id,
       token,
     },
   };

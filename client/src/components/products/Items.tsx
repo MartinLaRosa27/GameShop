@@ -1,9 +1,32 @@
 import React from "react";
 import Link from "next/link";
+import { useProductContext } from "@/context/ProductContext";
 
-export const Items = (props: { products: any; category: string }) => {
-  const handleChangeSort = () => {
-    console.log("sds");
+export const Items = (props: {
+  products: any;
+  category: string;
+  categoryId: string;
+  setProducts: Function;
+}) => {
+  const { getByCategory } = useProductContext();
+
+  const handleChangeSort = (e: string) => {
+    props.setProducts(null);
+    if (e.substring(0, 1) === "1") {
+      const callgGetByCategory = async () => {
+        props.setProducts(
+          await getByCategory(props.categoryId, e.substring(1, 5), null)
+        );
+      };
+      callgGetByCategory();
+    } else {
+      const callgGetByCategory = async () => {
+        props.setProducts(
+          await getByCategory(props.categoryId, null, e.substring(1, 5))
+        );
+      };
+      callgGetByCategory();
+    }
   };
 
   return (
@@ -22,14 +45,13 @@ export const Items = (props: { products: any; category: string }) => {
               <label className="input-group-text">Sort By</label>
               <select
                 className="form-select"
-                onChange={() => handleChangeSort()}
+                onChange={(e) => handleChangeSort(e.target.value)}
               >
-                <option value="3" selected>
-                  Newer
-                </option>
-                <option value="1">lower price</option>
-                <option value="2">higher price</option>
-                <option value="4">older</option>
+                <option defaultValue={"1desc"}>Select Sort Option</option>
+                <option value="1desc">newer</option>
+                <option value="1asc">older</option>
+                <option value="0asc">lower price</option>
+                <option value="0desc">higher price</option>
               </select>
             </div>
           </div>
@@ -45,10 +67,19 @@ export const Items = (props: { products: any; category: string }) => {
                     <div
                       className="part-1"
                       style={{
-                        background: `url(${product.img}) no-repeat center`,
-                        backgroundSize: "cover",
+                        background: `url(${product.img[0]}) no-repeat center`,
+                        backgroundSize: "190px",
                       }}
-                    ></div>
+                    >
+                      {product.preorder && (
+                        <div
+                          className="alert alert-primary preorder text-center mb-4"
+                          role="alert"
+                        >
+                          pre order
+                        </div>
+                      )}
+                    </div>
                     <div className="part-2">
                       <h3 className="product-title">{product.name}</h3>
                       <h4 className="product-price">

@@ -1,8 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/app.css";
-import type { AppProps } from "next/app";
 import Head from "next/head";
+import type { AppProps } from "next/app";
+import { SSRProvider } from "@react-aria/ssr";
 import { UserContext } from "@/context/UserContext";
+import { CategoryContext } from "@/context/CategoryContext";
+import { ProductContext } from "@/context/ProductContext";
 import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -14,10 +17,16 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         <title>GameShop</title>
       </Head>
-      <UserContext>
-        <Toaster />
-        <Component {...pageProps} />
-      </UserContext>
+      <SSRProvider>
+        <UserContext>
+          <CategoryContext>
+            <ProductContext>
+              <Toaster />
+              <Component {...pageProps} />
+            </ProductContext>
+          </CategoryContext>
+        </UserContext>
+      </SSRProvider>
     </>
   );
 }

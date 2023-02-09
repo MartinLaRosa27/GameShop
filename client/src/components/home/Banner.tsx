@@ -62,6 +62,7 @@ export const Banner = () => {
                     alt={product.title}
                     className="img"
                     style={product.styles}
+                    priority={true}
                   />
                 </div>
               </div>

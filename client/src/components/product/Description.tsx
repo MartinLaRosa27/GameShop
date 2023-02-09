@@ -14,7 +14,7 @@ export const Description = (props: { token: string; product: any }) => {
                   <img
                     src={props.product.img[index]}
                     id="main_product_image"
-                    width="350"
+                    style={{ maxWidth: "450px", maxHeight: "400px" }}
                   />
                 </div>
                 <div className="thumbnail_images">
@@ -43,9 +43,18 @@ export const Description = (props: { token: string; product: any }) => {
                   </span>
                 </div>
                 <div className="mt-2 pr-3 content">
-                  <p>{props.product.description}</p>
+                  <h6>{props.product.description}</h6>
+                  {props.product.preorder && (
+                    <p className="text-danger">
+                      Pre Order: We will send you an email when the product can
+                      be picked up from the branch, or is available for
+                      shipping.{" "}
+                      <strong>Realese Date: {props.product.releaseDate}</strong>{" "}
+                      <i>Subject to change</i>
+                    </p>
+                  )}
                 </div>
-                <h3>${props.product.price.toFixed(2)}</h3>
+                <h3 className="mt-4">${props.product.price.toFixed(2)}</h3>
                 <div className="ratings d-flex flex-row align-items-center">
                   <div className="d-flex flex-row">
                     {" "}
@@ -61,7 +70,9 @@ export const Description = (props: { token: string; product: any }) => {
                   <div className="quantity">
                     {props.product.stock ? (
                       <>
-                        <small className="text-success">10 in stock</small>
+                        <small className="text-success">
+                          <strong>{props.product.stock}</strong> in stock
+                        </small>
                         <div className="form-group">
                           <select
                             className="form-control"
