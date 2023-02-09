@@ -1,6 +1,9 @@
 import React from "react";
+import { useStateContext } from "@/context/StateContext";
 
 export const Description = (props: { token: string; product: any }) => {
+  const { saveProductLS } = useStateContext();
+  const [quantity, setQuantity] = React.useState<number>(1);
   const [index, setIndex] = React.useState(0);
 
   return (
@@ -14,7 +17,7 @@ export const Description = (props: { token: string; product: any }) => {
                   <img
                     src={props.product.img[index]}
                     id="main_product_image"
-                    style={{ maxWidth: "450px", maxHeight: "400px" }}
+                    style={{ maxWidth: "450px", maxHeight: "370px" }}
                   />
                 </div>
                 <div className="thumbnail_images">
@@ -55,40 +58,43 @@ export const Description = (props: { token: string; product: any }) => {
                   )}
                 </div>
                 <h3 className="mt-4">${props.product.price.toFixed(2)}</h3>
-                <div className="ratings d-flex flex-row align-items-center">
-                  <div className="d-flex flex-row">
-                    {" "}
-                    <i className="bx bxs-star"></i>{" "}
-                    <i className="bx bxs-star"></i>
-                    <i className="bx bxs-star"></i>{" "}
-                    <i className="bx bxs-star"></i>{" "}
-                    <i className="bx bx-star"></i>{" "}
-                  </div>
-                </div>
                 <div className="mt-5"></div>
                 <div className="buttons d-flex flex-row mt-5 gap-3">
                   <div className="quantity">
                     {props.product.stock ? (
-                      <>
-                        <small className="text-success">
-                          <strong>{props.product.stock}</strong> in stock
-                        </small>
+                      <div className="with-stock">
                         <div className="form-group">
+                          <small className="text-success">
+                            <strong>{props.product.stock}</strong> in stock
+                          </small>
                           <select
                             className="form-control"
                             id="exampleFormControlSelect1"
+                            onChange={(e) =>
+                              setQuantity(parseInt(e.target.value))
+                            }
                           >
                             {Array.from(Array(props.product.stock), (e, i) => {
-                              return <option key={i}>{i + 1}</option>;
+                              return (
+                                <option key={i} value={i + 1}>
+                                  {i + 1}
+                                </option>
+                              );
                             })}
                           </select>
                         </div>
-                      </>
+                        <button
+                          className="btn"
+                          disabled={!props.token}
+                          onClick={() => saveProductLS(props.product, quantity)}
+                        >
+                          Add To Cart
+                        </button>
+                      </div>
                     ) : (
                       <small className="text-danger">No Stock</small>
                     )}
                   </div>
-                  <button className="btn">Add To Cart</button>
                 </div>
               </div>
             </div>

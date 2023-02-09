@@ -20,7 +20,7 @@
     transition: all 0.5s;
   }
   .thumbnail_images ul li:hover {
-    border: 2px solid #000;
+    border: 2px solid #fff159;
   }
   .main_image {
     display: flex;
@@ -30,6 +30,10 @@
     height: 400px;
     width: 100%;
     overflow: hidden;
+
+    img {
+      margin-bottom: 20px;
+    }
   }
 
   .content p {
@@ -84,18 +88,35 @@
   .quantity {
     width: 200px;
     text-align: center;
+    width: 100%;
+
+    .with-stock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .form-group {
+        margin-right: 30px;
+
+        select {
+          text-align: center;
+          width: 200px;
+
+          &:focus {
+            border-color: black;
+            box-shadow: none;
+          }
+        }
+      }
+
+      .btn {
+        padding: 12px 30px;
+      }
+    }
 
     small {
       text-transform: uppercase;
       font-style: italic;
-    }
-
-    select {
-      text-align: center;
-      &:focus {
-        border-color: black;
-        box-shadow: none;
-      }
     }
   }
 }

@@ -16,7 +16,9 @@ export const NewArrivals = () => {
           <div className="row justify-content-center text-center">
             <div className="header">
               <h2>
-                <span>New </span>Arrivals
+                <strong>
+                  <span>New </span>Arrivals
+                </strong>
               </h2>
             </div>
           </div>

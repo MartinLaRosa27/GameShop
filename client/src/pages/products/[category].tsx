@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import auth from "../../middleware/auth";
 import * as cookie from "cookie";
+import { useRouter } from "next/router";
 import { useCategoryContext } from "@/context/CategoryContext";
 import { useProductContext } from "@/context/ProductContext";
 import { Header } from "@/components/assets/header/Header";
@@ -12,10 +13,12 @@ export default function ProductsCategory(props: {
   token: any;
   categoryTitle: string;
 }) {
-  const [products, setProducts] = React.useState<any>(null);
-  const [category, setCategory] = React.useState<any>(null);
+  const router = useRouter();
   const { getByCategory } = useProductContext();
   const { getCategoryByTitle } = useCategoryContext();
+
+  const [products, setProducts] = React.useState<any>(null);
+  const [category, setCategory] = React.useState<any>(null);
 
   React.useEffect(() => {
     const callgGetCategoryByTitle = async () => {
@@ -23,6 +26,8 @@ export default function ProductsCategory(props: {
       if (cat) {
         setCategory(cat);
         setProducts(await getByCategory(cat._id, "desc", null));
+      } else {
+        router.push("/404");
       }
     };
     callgGetCategoryByTitle();

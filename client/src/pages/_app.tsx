@@ -6,6 +6,7 @@ import { SSRProvider } from "@react-aria/ssr";
 import { UserContext } from "@/context/UserContext";
 import { CategoryContext } from "@/context/CategoryContext";
 import { ProductContext } from "@/context/ProductContext";
+import { StateContext } from "@/context/StateContext";
 import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,8 +22,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <UserContext>
           <CategoryContext>
             <ProductContext>
-              <Toaster />
-              <Component {...pageProps} />
+              <StateContext>
+                <Toaster />
+                <Component {...pageProps} />
+              </StateContext>
             </ProductContext>
           </CategoryContext>
         </UserContext>

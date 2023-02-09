@@ -7,14 +7,17 @@ import {
   AiOutlineLogout,
   AiOutlineLogin,
 } from "react-icons/ai";
-import { useUserContext } from "../../../context/UserContext";
+import { useUserContext } from "@/context/UserContext";
+import { useStateContext } from "@/context/StateContext";
 import { Navbar } from "./Navbar";
 import { Cart } from "./Cart";
 import { useRouter } from "next/router";
 
-export const Header = (props: { token: any }) => {
+export const Header = (props: { token: string }) => {
   const router = useRouter();
   const { logout } = useUserContext();
+  const { quantity } = useStateContext();
+
   const [modalShow, setModalShow] = useState(false);
 
   const handleClickLogin = () => {
@@ -44,10 +47,12 @@ export const Header = (props: { token: any }) => {
           <div className="icons">
             <span className="icon" onClick={() => setModalShow(true)}>
               <AiOutlineShoppingCart />
-              <span className="badge badge-warning" id="lblCartCount">
-                {" "}
-                5{" "}
-              </span>
+              {quantity > 0 && props.token && (
+                <span className="badge badge-warning" id="lblCartCount">
+                  {" "}
+                  {quantity}{" "}
+                </span>
+              )}
             </span>
             {props.token ? (
               <span className="icon" onClick={() => logout()}>
@@ -63,7 +68,11 @@ export const Header = (props: { token: any }) => {
       </header>
       <Navbar />
 
-      <Cart show={modalShow} onHide={() => setModalShow(false)} />
+      <Cart
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        token={props.token}
+      />
     </div>
   );
 };
