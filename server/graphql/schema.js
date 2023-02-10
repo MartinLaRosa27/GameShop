@@ -42,6 +42,7 @@ module.exports.typeDefs = gql`
       price: String
     ): [productType]
     getById(id: String): productType
+    getProductByName(name: String, date: String, price: String): [productType]
     getCategoryByTitle(title: String): categoryType
   }
 

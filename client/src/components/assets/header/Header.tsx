@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { useUserContext } from "@/context/UserContext";
 import { useStateContext } from "@/context/StateContext";
+import { useProductContext } from "@/context/ProductContext";
 import { Navbar } from "./Navbar";
 import { Cart } from "./Cart";
 import { useRouter } from "next/router";
@@ -17,11 +18,21 @@ export const Header = (props: { token: string }) => {
   const router = useRouter();
   const { logout } = useUserContext();
   const { quantity } = useStateContext();
+  const { getProductByName } = useProductContext();
 
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState<boolean>(false);
+  const [search, setSearch] = useState<string>("");
 
   const handleClickLogin = () => {
     router.push("/welcome");
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (search.length) {
+      getProductByName(search, "desc", null);
+      router.push(`/search/${search}`);
+    }
   };
 
   return (
@@ -30,11 +41,12 @@ export const Header = (props: { token: string }) => {
         <div className="d-flex justify-content-around container">
           <Image src={logo} alt="GameShop" className="logo" priority={true} />
           <div className="search">
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)} method="POST">
               <input
                 type="text"
                 className="form-control pt-3 pb-3"
                 placeholder="Enter your search..."
+                onChange={(e) => setSearch(e.target.value)}
               />
               <button type="submit" className="btn btn-primary">
                 <span>

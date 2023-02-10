@@ -4,6 +4,7 @@ const {
   getNewArrivals,
   getById,
   getByCategory,
+  getProductByName,
 } = require("../controllers/productController");
 const { auth } = require("../middleware/auth");
 
@@ -25,6 +26,10 @@ module.exports.resolvers = {
 
     getById: (root, { id }, context) => {
       return getById(id);
+    },
+
+    getProductByName: (root, { name, date, price }, context) => {
+      return getProductByName(name, date, price);
     },
 
     // category:

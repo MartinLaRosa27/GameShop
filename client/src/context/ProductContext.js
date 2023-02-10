@@ -6,6 +6,7 @@ const Context = createContext();
 
 export const ProductContext = ({ children }) => {
   const [newArrivals, setNewArrivals] = React.useState(null);
+  const [searchProducts, setSearchProducts] = React.useState(null);
 
   const getNewArrivals = async () => {
     const GET_NEW_ARRIVALS = gql`
@@ -127,13 +128,56 @@ export const ProductContext = ({ children }) => {
     return products;
   };
 
+  const getProductByName = async (name, date, price) => {
+    const GET_PRODUCT_BY_NAME = gql`
+      query GetProductByName($name: String, $date: String, $price: String) {
+        getProductByName(name: $name, date: $date, price: $price) {
+          _id
+          name
+          img
+          description
+          price
+          releaseDate
+          stock
+        }
+      }
+    `;
+    await axios
+      .post(`http://${process.env.NEXT_PUBLIC_BACKEND_URL}`, {
+        query: print(GET_PRODUCT_BY_NAME),
+        variables: {
+          name,
+          date,
+          price,
+        },
+      })
+      .then(async (res) => {
+        if (!res.data.errors) {
+          for (let i = 0; i < res.data.data.getProductByName.length; i++) {
+            if (
+              new Date(res.data.data.getProductByName[i].releaseDate) >
+              new Date()
+            ) {
+              res.data.data.getProductByName[i].preorder = 1;
+            }
+          }
+          setSearchProducts(res.data.data.getProductByName);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
     <Context.Provider
       value={{
         newArrivals,
+        searchProducts,
         getNewArrivals,
         getByIdId,
         getByCategory,
+        getProductByName,
       }}
     >
       {children}

@@ -7,7 +7,7 @@ import { Banner } from "@/components/home/Banner";
 import { Offers } from "@/components/home/Offers";
 import { NewArrivals } from "@/components/home/NewArrivals";
 
-export default function Home(props: { token: any }) {
+export default function Home(props: { token: string }) {
   return (
     <>
       <Head>

@@ -47,3 +47,26 @@ module.exports.getByCategory = async (categoryId, date, price) => {
     throw new Error("Cannot get the products");
   }
 };
+
+module.exports.getProductByName = async (name, date, price) => {
+  if (!price) {
+    try {
+      const product = await Product.find({
+        name: { $regex: new RegExp(".*" + name, "i") },
+      }).sort({ createdAt: date });
+      return product;
+    } catch (e) {
+      console.log(e);
+      throw new Error("Cannot get the products");
+    }
+  }
+  try {
+    const product = await Product.find({
+      name: { $regex: new RegExp(".*" + name, "i") },
+    }).sort({ price });
+    return product;
+  } catch (e) {
+    console.log(e);
+    throw new Error("Cannot get the products");
+  }
+};

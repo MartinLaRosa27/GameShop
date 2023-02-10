@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/context/UserContext.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/context/UserContext.js", "src/components/assets/header/Search.jsx"],
   "exclude": ["node_modules"]
 }

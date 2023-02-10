@@ -1,30 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { useProductContext } from "@/context/ProductContext";
 
 export const Items = (props: {
   products: any;
-  category: string;
-  categoryId: string;
-  setProducts: Function;
+  search: string;
+  getProductByName: Function;
 }) => {
-  const { getByCategory } = useProductContext();
-
   const handleChangeSort = (e: string) => {
     if (e.substring(0, 1) === "1") {
-      const callgGetByCategory = async () => {
-        props.setProducts(
-          await getByCategory(props.categoryId, e.substring(1, 5), null)
-        );
-      };
-      callgGetByCategory();
+      props.getProductByName(props.search, e.substring(1, 5), null);
     } else {
-      const callgGetByCategory = async () => {
-        props.setProducts(
-          await getByCategory(props.categoryId, null, e.substring(1, 5))
-        );
-      };
-      callgGetByCategory();
+      props.getProductByName(props.search, null, e.substring(1, 5));
     }
   };
 
@@ -35,7 +21,7 @@ export const Items = (props: {
           <div className="row justify-content-center text-center">
             <div className="header">
               <h2>
-                <span>{props.category}</span>
+                <span>Results of:</span> <strong>{props.search}</strong>
               </h2>
             </div>
           </div>
@@ -46,7 +32,7 @@ export const Items = (props: {
                 className="form-select"
                 onChange={(e) => handleChangeSort(e.target.value)}
               >
-                <option defaultValue={"1desc"} disabled={true}>
+                <option defaultValue={"null"} disabled={true}>
                   Select Sort Option
                 </option>
                 <option value="1desc">newer</option>
