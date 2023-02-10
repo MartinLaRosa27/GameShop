@@ -48,5 +48,6 @@ module.exports.typeDefs = gql`
 
   type Mutation {
     postUser(input: userInput): String
+    postPurchase(selectedProducts: Array): String
   }
 `;

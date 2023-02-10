@@ -1,10 +1,30 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import Swal from "sweetalert2";
 import { useStateContext } from "@/context/StateContext";
+import { usePurchaseContext } from "@/context/PurchaseContext";
 import { AiOutlineShoppingCart, AiOutlineCloseCircle } from "react-icons/ai";
 
 export const Cart = (props: { show: boolean; onHide: any; token: string }) => {
   const { cart, total, removeProductLS } = useStateContext();
+  const { postPurchase } = usePurchaseContext();
+
+  const finalizePurchase = () => {
+    Swal.fire({
+      title:
+        '<strong class="text-uppercase">Are you sure you want to finalize the purchase?</strong>',
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "YES!",
+      cancelButtonText: "NO!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        postPurchase(cart, props.token);
+      }
+    });
+  };
 
   return (
     <Modal
@@ -69,6 +89,9 @@ export const Cart = (props: { show: boolean; onHide: any; token: string }) => {
               type="button"
               className="btn btn-primary mt-3 text-uppercase"
               disabled={!props.token}
+              onClick={() => {
+                finalizePurchase();
+              }}
             >
               buy now
             </button>

@@ -7,6 +7,7 @@ import { UserContext } from "@/context/UserContext";
 import { CategoryContext } from "@/context/CategoryContext";
 import { ProductContext } from "@/context/ProductContext";
 import { StateContext } from "@/context/StateContext";
+import { PurchaseContext } from "@/context/PurchaseContext";
 import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -22,10 +23,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <UserContext>
           <CategoryContext>
             <ProductContext>
-              <StateContext>
-                <Toaster />
-                <Component {...pageProps} />
-              </StateContext>
+              <PurchaseContext>
+                <StateContext>
+                  <Toaster />
+                  <Component {...pageProps} />
+                </StateContext>
+              </PurchaseContext>
             </ProductContext>
           </CategoryContext>
         </UserContext>

@@ -6,6 +6,7 @@ const {
   getByCategory,
   getProductByName,
 } = require("../controllers/productController");
+const { postPurchase } = require("../controllers/purchaseController");
 const { auth } = require("../middleware/auth");
 
 module.exports.resolvers = {
@@ -47,6 +48,11 @@ module.exports.resolvers = {
     // user:
     postUser: (root, { input }, context) => {
       return postUser(input);
+    },
+
+    // purchase
+    postPurchase: (root, { selectedProducts }, context) => {
+      return postPurchase(selectedProducts, context.user);
     },
   },
 };

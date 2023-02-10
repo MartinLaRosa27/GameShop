@@ -60,18 +60,3 @@ module.exports.authenticateUser = async (input) => {
     return e;
   }
 };
-
-// module.exports.getUserByUsername = async (username, user) => {
-//   if (user) {
-//     try {
-//       const users = await User.find({
-//         username: { $regex: new RegExp(".*" + username, "i") },
-//       });
-//       return users;
-//     } catch (e) {
-//       console.log(e);
-//       throw new Error("Cannot get the users");
-//     }
-//   }
-//   throw new Error("session expired");
-// };
